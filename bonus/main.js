@@ -19,8 +19,24 @@ $(document).ready(function () {
         }
     });
 
+//BONUS:se clicco su un pallino specifico lo slider ritorna sull'immagine corrispondente
+
+    $("#i_1").click(function () {
+        pallinoCliccato("#img_1" , "#i_1");
+    });
+    $("#i_2").click(function () {
+        pallinoCliccato("#img_2" , "#i_2");
+    });
+    $("#i_3").click(function () {
+        pallinoCliccato("#img_3" , "#i_3");
+    });
+    $("#i_4").click(function () {
+        pallinoCliccato("#img_4" , "#i_4");
+    });
+
 //se premo i bottone a destra o a sinistra dello slider =>Modifica del display di pallini e immagini tramite funzioni
- 
+    
+
     nextButton.click(function () {
         nextImage();
         nextPallino();
@@ -94,6 +110,15 @@ function prevPallino() {
         pallinoActive.removeClass("active");
         pallinoActive.prev("i").addClass("active");
     }
+};
+
+//BONUS:funzione che a id di immagine e pallino cambia il display degli elementi in modo che corrispondano.
+
+function pallinoCliccato (iDimg,idPallino) {
+    $("img.active").removeClass("active");
+    $(iDimg).addClass("active");
+    $("i.active").removeClass("active");
+    $(idPallino).addClass("active");
 };
 
 
